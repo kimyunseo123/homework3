@@ -22,7 +22,7 @@ void main(void)
 float sum(float list[], int n)
 {
     printf("value of list = %p\n", list); // list 의 값 = 004070A0
-    printf("address of list = %p\n\n", &list); // list 의 메모리 주소 = 0061FF00
+    printf("address of list = %p\n\n", &list); // list 의 값 = input의 메모리 주소 = 004070A0
 
     int i;
     float tempsum = 0; // tempsum 값을 0으로 지정
