@@ -13,16 +13,19 @@ void main(void)
     
     for(i=0; i < MAX_SIZE; i++) // (0 <= i < MAX_SIZE(100)) 동안 반복
     input[i] = i; // input[i]의 값 = i
-    /* for checking call by reference */
-    printf("address of input = %p\n", input); // input의 메모리 주소 = 004070A0
+    printf("address of input = %p\n", input); // input의 메모리 주소값 = 004070A0
+
     answer = sum(input, MAX_SIZE); // sum 함수의 return 값을 answer에 저장
+    /* input의 주소를 list가 받아, input 배열을 list를 통해 접근
+    값을 그대로 변수 n에 복사하여, n이 변경되도 caller의 값이 변하지 않음 */
+
     printf("The sum is: %f\n", answer); // answer 값 = 4950.000000
 }
 
 float sum(float list[], int n)
 {
-    printf("value of list = %p\n", list); // list 의 값 = 004070A0
-    printf("address of list = %p\n\n", &list); // list 의 값 = input의 메모리 주소 = 004070A0
+    printf("value of list = %p\n", list); // input(= &input[0])의 주소값 = list = 004070A0
+    printf("address of list = %p\n\n", &list); // list 의 메모리 주소값 = 0061FF00
 
     int i;
     float tempsum = 0; // tempsum 값을 0으로 지정
